@@ -2,22 +2,21 @@ package com.poc.springsecurityopa.employee.domain;
 
 import com.poc.springsecurityopa.common.Country;
 import com.poc.springsecurityopa.common.Gender;
-import com.poc.springsecurityopa.common.References;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
 @TypeAlias("employee")
-@SuperBuilder(toBuilder = true)
+@Builder
 @Document(collection = "employee")
 @NoArgsConstructor
-public class Employee extends References {
+@AllArgsConstructor
+public class Employee  {
     @MongoId
     String id;
     Gender gender;
