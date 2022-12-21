@@ -1,8 +1,8 @@
-package com.poc.springsecurityopa.users;
+package com.poc.springsecurityopa.customers;
 
 import com.poc.springsecurityopa.common.enums.Gender;
 
-public record UserRequest(
+public record CustomerRequest(
     String username,
     String email,
     Gender gender

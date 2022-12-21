@@ -1,10 +1,13 @@
 {
-  "users": {
-    "bob": {
-      "readOnly": true
+  "input": {
+    "user": {
+      "roles": [
+        "developer"
+      ]
     },
-    "alice": {
-      "readOnly": false
+    "request": {
+      "method": "GET",
+      "path": "/public/pictures"
     }
   }
 }

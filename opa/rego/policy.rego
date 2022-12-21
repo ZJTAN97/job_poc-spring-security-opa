@@ -1,12 +1,12 @@
-package example.authz
+package authz
 
 default allow = false
 
 allow {
-    input.user.roles[_] == "admin" # iteration through roles, if there is admin, then its true
+    input.authorities[_] == "ROLE_ADMIN" # iteration through roles, if there is admin, then its true
 }
 
 allow {
-   startswith(input.request.path, "/public")
-   input.request.method == "GET"
+   input.path[_] == "customers"
+   input.method == "GET"
 }

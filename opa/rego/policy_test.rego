@@ -1,6 +1,6 @@
 package policy_text
 
-import data.example.authz.allow
+import data.authz.allow
 
 test_allow_to_false_by_default {
     not allow
@@ -8,45 +8,28 @@ test_allow_to_false_by_default {
 
 test_allow_if_not_admin {
     not allow with input as {
-      "user": {
-        "username": "docker",
-        "roles": ["developer"]
-      }
+        "name": "docker",
+        "authorities": ["ROLE_DEVELOPER"]
     }
 }
 
 test_allow_if_admin {
    allow with input as {
-      "user": {
-        "username": "docker_admin",
-        "roles": ["admin"]
-      }
+       "name": "kubernetes",
+       "authorities": ["ROLE_ADMIN"]
    }
 }
 
-test_allow_if_get_on_public {
+test_allow_if_get_on_users {
    allow with input as {
-     "request": {
-         "method": "GET",
-         "path": "/public"
-     }
+       "method": "GET",
+       "path": ["api", "v1", "customers"]
    }
 }
 
-test_deny_if_not_get_on_public {
+test_deny_if_not_get_on_users {
    not allow with input as {
-     "request": {
-         "method": "DELETE",
-         "path": "/public"
-     }
+       "method": "PUT",
+       "path": ["api", "v1", "customers"]
    }
-}
-
-test_deny_if_not_admin_and_get_not_public {
-  not allow with input as {
-    "request": {
-        "method": "GET",
-        "path": "/private"
-    }
-  }
 }
