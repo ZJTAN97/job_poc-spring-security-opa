@@ -1,25 +1,5 @@
-# job_poc-spring-security-opa
+# Proof Of Concept Work
 
-# Open Policy Agent Notes
-
-## 1. Understanding the Rego Language
-
-```
-
-# within each declaration {} follows the AND assignment
-# between each declaration follows the OR assignment
-
-hello {
-  m := input.message # Assigning input.message to variable `m`
-  m == "world" # check if m is equals to "world"
-}
-
-hello {
-  m := input.message
-  m == "hello"
-}
-
-# check if input.message == "hello" or "world", both will yield true
-# if equal, returns true 
-
-```
+- Proof Of Concept project with the integration of OPA (Open Policy Agent) and Spring Security
+- Core idea is to make use of Spring Security `AuthorizationManager` to consult OPA to determine if the request should
+  be authorized

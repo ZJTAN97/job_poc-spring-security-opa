@@ -1,0 +1,6 @@
+{
+  "user": {
+    "username": "docker",
+    "roles": ["developer", "admin"]
+  }
+}
