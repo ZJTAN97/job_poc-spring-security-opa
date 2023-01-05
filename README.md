@@ -6,11 +6,11 @@
 
 # To Start
 
-1. Start Spring Boot Application (along with containerized local MongoDB)
-2. Start OPA server
+1. Start MongoDB and OPA Server container through docker-compose
+2. Start Spring Boot application
 
 ```
-cd /opa/rego
-./opa.exe run --server .
+docker-compose up -d
+./mvnw spring-boot:run
 
 ```

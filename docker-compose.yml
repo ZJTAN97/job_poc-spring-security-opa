@@ -8,6 +8,18 @@ services:
       - "27017:27017"
     volumes:
       - mongo:/data/db
-
+  opa:
+    container_name: opa-server
+    image: openpolicyagent/opa
+    ports:
+      - "8181:8181"
+    command:
+      - "run"
+      - "--server"
+      - "--log-level=debug"
+      - "--log-format=json-pretty"
+      - "/config/policy.rego"
+    volumes:
+      - ./opa/policy.rego:/config/policy.rego
 volumes:
   mongo:

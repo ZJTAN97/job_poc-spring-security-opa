@@ -39,3 +39,12 @@ hello {
 ./opa.exe run --server
 
 ```
+
+
+## 3. Running OPA with docker image OPA
+
+```
+
+
+
+```
