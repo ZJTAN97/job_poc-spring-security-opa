@@ -23,7 +23,16 @@ test_allow_if_admin {
 test_allow_if_get_on_users {
    allow with input as {
        "method": "GET",
-       "path": ["api", "v1", "customers"]
+       "path": ["api", "v1", "customers"],
+       "authorities": ["ROLE_DEVELOPER"]
+   }
+}
+
+test_allow_if_post_on_users {
+   allow with input as {
+      "method": "POST",
+      "path": ["api", "v1", "customers"],
+      "authorities": ["ROLE_ADMIN"]
    }
 }
 

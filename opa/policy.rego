@@ -7,6 +7,7 @@ allow {
 }
 
 allow {
+   input.authorities[_] == "ROLE_DEVELOPER"
    input.path[_] == "customers"
    input.method == "GET"
 }

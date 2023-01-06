@@ -32,19 +32,10 @@ hello {
 ./opa.exe eval --format raw --data policy.rego --input input.json 'data.<packagename>.<variable_you_testing>'
 
 # 2. test (unit testing provided by OPA)
-./opa.exe test .
+./opa.exe test ../
 
 
-# 3. start server (through REST API)
-./opa.exe run --server
-
-```
-
-
-## 3. Running OPA with docker image OPA
-
-```
-
-
+# 3. start server and apply written policies (through REST API)
+./opa.exe run --server ../
 
 ```

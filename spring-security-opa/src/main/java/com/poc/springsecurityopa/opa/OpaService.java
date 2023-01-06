@@ -3,7 +3,6 @@ package com.poc.springsecurityopa.opa;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.poc.springsecurityopa.opa.OpaRequest;
 import java.util.List;
 import java.util.Objects;
 import javax.servlet.http.HttpServletRequest;

@@ -45,15 +45,17 @@ public class SecurityConfig {
 
     @Bean
     protected SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.cors().and().csrf().disable().exceptionHandling();
-
-        http.formLogin()
-                .disable()
-                .httpBasic()
+        http.cors()
                 .and()
-                .authorizeHttpRequests()
-                .anyRequest()
-                .access(opaAuthorization());
+                .csrf()
+                .disable()
+                .exceptionHandling()
+                .and()
+                .formLogin()
+                .disable()
+                .httpBasic();
+
+        http.authorizeHttpRequests().anyRequest().access(opaAuthorization());
 
         return http.build();
     }
