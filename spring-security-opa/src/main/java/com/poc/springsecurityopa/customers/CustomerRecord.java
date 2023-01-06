@@ -14,8 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @TypeAlias("customer") // does not record the full class name in the "_class" field in mongodb
 public class CustomerRecord {
 
-    @Id
-    private String id;
+    @Id private String id;
 
     private String username;
 
@@ -25,7 +24,5 @@ public class CustomerRecord {
 
     private Gender gender;
 
-    @Version
-    private Long version;
-
+    @Version private Long version;
 }

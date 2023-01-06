@@ -1,10 +1,9 @@
 package com.poc.springsecurityopa.customers;
 
 import com.poc.springsecurityopa.common.exception.RecordNotFoundException;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -18,12 +17,14 @@ public class CustomerService {
 
     public CustomerRecord findOne(String customerId) {
         return customerRecordRepository
-                .findById(customerId).orElseThrow(() ->
-                        new RecordNotFoundException("Record " + customerId + " does not exist"));
+                .findById(customerId)
+                .orElseThrow(
+                        () ->
+                                new RecordNotFoundException(
+                                        "Record " + customerId + " does not exist"));
     }
 
     public CustomerRecord create(CustomerRecord userRecord) {
         return customerRecordRepository.insert(userRecord);
     }
-
 }
