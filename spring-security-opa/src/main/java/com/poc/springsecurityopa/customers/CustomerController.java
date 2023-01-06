@@ -1,13 +1,12 @@
 package com.poc.springsecurityopa.customers;
 
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -30,16 +29,16 @@ public class CustomerController {
 
     @PostMapping
     public ResponseEntity<CustomerResponse> create(@RequestBody CustomerRequest userRequest) {
-        CustomerRecord createdUserRecord = customerService.create(customerMapper.toDomainObject(userRequest));
+        CustomerRecord createdUserRecord =
+                customerService.create(customerMapper.toDomainObject(userRequest));
         CustomerResponse createdUserResponse = customerMapper.toDto(createdUserRecord);
 
-        UriComponents uriComponents = UriComponentsBuilder
-            .fromPath("/api/v1/users/{userId}")
-            .buildAndExpand(createdUserResponse.id());
+        UriComponents uriComponents =
+                UriComponentsBuilder.fromPath("/api/v1/users/{userId}")
+                        .buildAndExpand(createdUserResponse.id());
 
         return ResponseEntity.created(uriComponents.toUri())
-            .contentType(MediaType.APPLICATION_JSON)
-            .body(customerMapper.toDto(createdUserRecord));
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(customerMapper.toDto(createdUserRecord));
     }
-
 }

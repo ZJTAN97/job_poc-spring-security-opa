@@ -1,9 +1,8 @@
 package com.poc.springsecurityopa.customers;
 
+import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
-
-import java.util.List;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface CustomerMapper {
@@ -13,5 +12,4 @@ public interface CustomerMapper {
     List<CustomerResponse> toDto(List<CustomerRecord> customerRecords);
 
     CustomerRecord toDomainObject(CustomerRequest customerRequest);
-
 }
