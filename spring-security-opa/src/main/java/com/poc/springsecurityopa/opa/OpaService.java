@@ -1,4 +1,4 @@
-package com.poc.springsecurityopa.security;
+package com.poc.springsecurityopa.opa;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

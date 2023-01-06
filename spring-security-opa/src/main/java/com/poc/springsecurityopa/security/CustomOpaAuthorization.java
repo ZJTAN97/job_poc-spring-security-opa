@@ -1,6 +1,8 @@
 package com.poc.springsecurityopa.security;
 
 import java.util.function.Supplier;
+
+import com.poc.springsecurityopa.opa.OpaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authorization.AuthorizationDecision;
 import org.springframework.security.authorization.AuthorizationManager;
