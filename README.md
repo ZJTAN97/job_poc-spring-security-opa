@@ -67,3 +67,15 @@ The policy is as followed:
 For OPA to be integrated with Spring Security Authorization Manager, there are 2 main components written
 - `CustomOpaAuthorization` which implements Spring Security `AuthorizationManager`
 - `OpaService` which has a single method `consult` to send request to OPA to consult on whether the following user is authorized to access the different resources.
+
+
+<br>
+
+## References used for this PoC
+
+[Basic understanding of Spring Security Authority Architecture](https://docs.spring.io/spring-security/reference/servlet/authorization/architecture.html#authz-custom-authorization-manager)
+
+[Spring Security 5.8 Migration Guide for Authorization](https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#_switch_to_authorizationmanager)
+
+[Authorize HttpServletRequests with AuthorizationFilter 5.8 docs](https://docs.spring.io/spring-security/reference/5.8/servlet/authorization/authorize-http-requests.html)
+
